@@ -1,7 +1,0 @@
-[phases.setup]
-nixPkgs = ["php82", "php82Packages.composer"]
-
-[phases.build]
-cmds = [
-  "install-php-extensions zip"
-]
