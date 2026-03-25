@@ -39,6 +39,7 @@ use App\Http\Controllers\Api\Jobseeker\JobseekerNotificationController;
 use App\Http\Controllers\Api\Jobseeker\JobseekerSavedJobController;
 use App\Http\Controllers\Api\Jobseeker\JobseekerSkillsController;
 use App\Http\Controllers\Api\Jobseeker\JobseekerEventRegistrationController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +88,9 @@ Route::get('/public/map/employers', [PublicMapController::class, 'employers']);
 
 // Public Skills Catalog (used by jobseekers to pick skills)
 Route::get('/public/skills', [PublicSkillsController::class, 'index']);
+
+Route::get('employees/by-name', [EmployeeController::class, 'showByFullName']);
+Route::apiResource('employees', EmployeeController::class);
 
 /*
 |--------------------------------------------------------------------------
